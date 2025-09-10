@@ -1,0 +1,54 @@
+package dev.doctor4t.trainmurdermystery.block;
+
+import com.mojang.serialization.MapCodec;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.HorizontalFacingBlock;
+import net.minecraft.block.ShapeContext;
+import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.state.StateManager;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
+
+public class LedgeBlock extends HorizontalFacingBlock {
+    public static final MapCodec<LedgeBlock> CODEC = createCodec(LedgeBlock::new);
+
+    protected static final VoxelShape NORTH_SHAPE = Block.createCuboidShape(0, 14, 0, 16, 16, 2);
+    protected static final VoxelShape EAST_SHAPE = Block.createCuboidShape(14, 14, 0, 16, 16, 16);
+    protected static final VoxelShape SOUTH_SHAPE = Block.createCuboidShape(0, 14, 14, 16, 16, 16);
+    protected static final VoxelShape WEST_SHAPE = Block.createCuboidShape(0, 14, 0, 2, 16, 16);
+
+    public LedgeBlock(Settings settings) {
+        super(settings);
+        this.setDefaultState(super.getDefaultState()
+                .with(FACING, Direction.NORTH));
+    }
+
+    @Override
+    protected MapCodec<? extends HorizontalFacingBlock> getCodec() {
+        return CODEC;
+    }
+
+    @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing());
+    }
+
+    @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return switch (state.get(FACING)) {
+            case NORTH -> NORTH_SHAPE;
+            case SOUTH -> SOUTH_SHAPE;
+            case WEST -> WEST_SHAPE;
+            case EAST -> EAST_SHAPE;
+            default -> null;
+        };
+    }
+
+    @Override
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(FACING);
+    }
+}

@@ -134,6 +134,7 @@ public class TrainMurderMysteryBlockLootTableGen extends FabricBlockLootTablePro
         this.addSelfDrop(TrainMurderMysteryBlocks.BAR_TABLE);
         this.addSelfDrop(TrainMurderMysteryBlocks.BAR_STOOL);
         this.addSelfDrop(TrainMurderMysteryBlocks.GOLD_BAR);
+        this.addSelfDrop(TrainMurderMysteryBlocks.GOLD_LEDGE);
         this.addSelfDrop(TrainMurderMysteryBlocks.STAINLESS_STEEL_BAR);
         this.addSelfDrop(TrainMurderMysteryBlocks.TRIMMED_LANTERN);
         this.addSelfDrop(TrainMurderMysteryBlocks.WALL_LAMP);

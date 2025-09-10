@@ -171,6 +171,7 @@ public class TrainMurderMysteryLangGen extends FabricLanguageProvider {
         builder.add(TrainMurderMysteryBlocks.BAR_TABLE, "Bar Table");
         builder.add(TrainMurderMysteryBlocks.BAR_STOOL, "Bar Stool");
         builder.add(TrainMurderMysteryBlocks.GOLD_BAR, "Gold Bar");
+        builder.add(TrainMurderMysteryBlocks.GOLD_LEDGE, "Gold Ledge");
         builder.add(TrainMurderMysteryBlocks.STAINLESS_STEEL_BAR, "Stainless Steel Bar");
         builder.add(TrainMurderMysteryBlocks.TRIMMED_LANTERN, "Trimmed Lantern");
         builder.add(TrainMurderMysteryBlocks.WALL_LAMP, "Wall Lamp");

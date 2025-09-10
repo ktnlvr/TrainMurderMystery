@@ -154,6 +154,9 @@ public class TrainMurderMysteryModelGen extends FabricModelProvider {
     private static final Model ORNAMENT_R270 = template(
             "block/template_ornament_r270", TextureKey.TEXTURE
     );
+    private static final Model LEDGE = template(
+            "block/template_ledge", TextureKey.TEXTURE
+    );
     private static final Model BAR = template(
             "block/template_bar", TextureKey.TEXTURE
     );
@@ -301,6 +304,7 @@ public class TrainMurderMysteryModelGen extends FabricModelProvider {
         generator.registerSimpleState(TrainMurderMysteryBlocks.BAR_TABLE);
         generator.registerSimpleState(TrainMurderMysteryBlocks.BAR_STOOL);
         this.registerBar(generator, TrainMurderMysteryBlocks.GOLD_BAR);
+        this.registerLedge(generator, TrainMurderMysteryBlocks.GOLD_LEDGE, TrainMurderMysteryBlocks.GOLD_BAR);
         this.registerBar(generator, TrainMurderMysteryBlocks.STAINLESS_STEEL_BAR);
         this.registerTrimmedLantern(generator, TrainMurderMysteryBlocks.TRIMMED_LANTERN, false);
         this.registerWallLamp(generator, TrainMurderMysteryBlocks.WALL_LAMP, false);
@@ -674,6 +678,20 @@ public class TrainMurderMysteryModelGen extends FabricModelProvider {
             );
         }
         generator.blockStateCollector.accept(blockStateSupplier);
+    }
+
+    private void registerLedge(BlockStateModelGenerator generator, Block block, Block barBlock) {
+        TextureMap textureMap = TextureMap.texture(barBlock);
+        Identifier model = LEDGE.upload(block, textureMap, generator.modelCollector);
+        generator.blockStateCollector.accept(
+                VariantsBlockStateSupplier.create(block).coordinate(BlockStateVariantMap.create(LedgeBlock.FACING)
+                        .register(Direction.NORTH, this.model(model))
+                        .register(Direction.EAST, this.model(model).put(VariantSettings.Y, VariantSettings.Rotation.R90))
+                        .register(Direction.SOUTH, this.model(model).put(VariantSettings.Y, VariantSettings.Rotation.R180))
+                        .register(Direction.WEST, this.model(model).put(VariantSettings.Y, VariantSettings.Rotation.R270))
+                )
+        );
+        generator.registerItemModel(block.asItem());
     }
 
     private void registerLadder(BlockStateModelGenerator generator, Block block) {

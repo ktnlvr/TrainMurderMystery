@@ -98,6 +98,7 @@ public class TrainMurderMysteryBlockTagGen extends FabricTagProvider.BlockTagPro
                 .add(TrainMurderMysteryBlocks.TARNISHED_GOLD_VENT_HATCH)
                 .add(TrainMurderMysteryBlocks.TARNISHED_GOLD_VENT_SHAFT)
                 .add(TrainMurderMysteryBlocks.GOLD_BAR)
+                .add(TrainMurderMysteryBlocks.GOLD_LEDGE)
                 .add(TrainMurderMysteryBlocks.TRIMMED_LANTERN)
                 .add(TrainMurderMysteryBlocks.WALL_LAMP)
                 .add(TrainMurderMysteryBlocks.GOLD_ORNAMENT);
@@ -302,6 +303,7 @@ public class TrainMurderMysteryBlockTagGen extends FabricTagProvider.BlockTagPro
                 .add(TrainMurderMysteryBlocks.BLACK_HULL_SHEET_SLAB)
                 .add(TrainMurderMysteryBlocks.CARGO_BOX)
                 .add(TrainMurderMysteryBlocks.GOLD_BAR)
+                .add(TrainMurderMysteryBlocks.GOLD_LEDGE)
                 .add(TrainMurderMysteryBlocks.STAINLESS_STEEL_BAR)
                 .add(TrainMurderMysteryBlocks.TRIMMED_LANTERN)
                 .add(TrainMurderMysteryBlocks.WALL_LAMP)
