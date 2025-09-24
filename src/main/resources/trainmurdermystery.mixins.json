@@ -18,6 +18,7 @@
     "client.EntityRendererDispatchMixin",
     "client.MinecraftClientMixin",
     "client.PlayerEntityRendererMixin",
+    "client.TrueDarknessLightmapTextureManagerMixin",
     "client.items.BipedEntityModelMixin",
     "client.items.ClientPlayerEntityMixin",
     "client.items.HeldItemRendererMixin",
