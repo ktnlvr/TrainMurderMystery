@@ -33,13 +33,6 @@ public class RevolverItem extends Item {
             if (collision instanceof EntityHitResult entityHitResult) {
                 var target = entityHitResult.getEntity();
                 ClientPlayNetworking.send(new GunShootPayload(target.getId()));
-                if (target instanceof PlayerEntity targetEntity) {
-                    var game = TMMComponents.GAME.get(user.getWorld());
-                    if (game.isCivilian(targetEntity) && game.isCivilian(user) && !user.isCreative()) {
-                        PlayerMoodComponent.KEY.get(user).setMood(0);
-                        user.dropItem(true);
-                    }
-                }
             } else {
                 ClientPlayNetworking.send(new GunShootPayload(-1));
             }
