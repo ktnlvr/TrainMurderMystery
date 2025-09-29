@@ -152,6 +152,25 @@ public class TMM implements ModInitializer {
 // TODO: Louder footsteps
 // TORECORD: System that remembers previous roles and allows cycling of roles (Amy)
 
-// TODO:
-// - Item shop sounds
-// - Disable feature renderers on psychos
+// TODO: Item shop sounds
+// TODO: Disable feature renderers on psychos
+// TODO: more knife knockback
+// TODO: Timer for hitman
+// TODO: Button in shower
+// TODO: Bed at the back for 14+ players games
+// TODO: Remove loud outside ambience for spectators + shake
+// TODO: Invisible note in hand + not in psychosis pool
+// TODO: fix spectators spawning another body
+// TODO: fix sleeping inside people
+// TODO: Indicate grenade does no damage to hitmen
+// TODO: Fix shower sound
+// TODO: Hitmen can see the mood of players
+// TODO: Heartbeat sanity low
+// TODO: Fix poison visual not getting removed
+// TODO: Lower firecracker timer
+// TODO: Fix blackout name not disappearing
+// TODO: dofiretickfalse
+// TODO: psycho mode can shrug off one bullet
+// TODO: add barriers under ladders
+// TODO: add command to reset role weighting
+// TODO: fix name and sticky note render over each other if your cursor sees both
